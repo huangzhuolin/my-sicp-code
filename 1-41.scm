@@ -1,0 +1,10 @@
+(define (double foo)
+  (lambda (x)
+    (foo (foo x))
+  )
+)
+(define (inc x) (+ x 1))
+((double square) 2)
+(((double double) inc) 1)
+
+(((double (double double)) inc) 5)
