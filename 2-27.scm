@@ -1,0 +1,17 @@
+(define nil '())
+
+(define (deep-reverse items)
+  (cond ((not (pair? items)) items)
+        ((null? (cdr items))
+         (cons (deep-reverse (car items)) nil)
+        )
+        (else (append (deep-reverse (cdr items))
+                      (cons (deep-reverse (car items)) nil))
+        )
+  )
+)
+
+(define x (list (list 1 2) (list 3 4)))
+(deep-reverse x)
+(deep-reverse (list 1 2 3))
+(deep-reverse (list 1 (list 3 2 1) 3))
