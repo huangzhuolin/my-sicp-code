@@ -15,3 +15,4 @@
 (deep-reverse x)
 (deep-reverse (list 1 2 3))
 (deep-reverse (list 1 (list 3 2 1) 3))
+(deep-reverse (list 1 (list 2 (list 3 4))))
