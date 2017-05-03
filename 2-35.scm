@@ -12,7 +12,8 @@
   (if (null? sequence)
       initial
       (op (car sequence)
-          (accumulate op initial (cdr sequence)))))
+          (accumulate op initial (cdr sequence))))
+)
 
 (define (enumerate-tree tree)
    (cond ((null? tree) nil)
@@ -28,4 +29,4 @@
 
 ;;; Usage
 (define tree (list 1 2 3 (list 4 5 (list 6 7))))
-(count-leaves tree)  ;; => 7 
+(count-leaves tree)  ;; => 7
