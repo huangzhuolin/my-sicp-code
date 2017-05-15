@@ -35,3 +35,10 @@
 (display (add-vect v1 v2))
 (display (sub-vect v1 v2))
 (display (scale-vect v1 3))
+
+;;; ========================
+;;; 2.48
+;;; ========================
+(define make-segment cons)
+(define start-segment car)
+(define end-segment cdr)
