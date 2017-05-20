@@ -18,3 +18,22 @@
         (else (intersection-set (cdr set1) set2))
   )
 )
+
+(define (union-set set1 set2)
+  (define (join s result)
+    (if (null? s) result (join (cdr s) (adjoin-set (car s) result)))
+  )
+  (join set2 set1)
+)
+
+;;; test
+(union-set '(1 2 3) '(2 4))
+
+;;; =========================
+;;; 2.60
+;;; =========================
+
+;;; `element-of-set` and `intersection-set` are the same as previous one
+
+(define adjoin-set cons)
+(define union-set append)
